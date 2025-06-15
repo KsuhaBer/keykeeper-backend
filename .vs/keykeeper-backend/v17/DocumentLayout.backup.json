@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\keykeeper-backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\salelisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\salelisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\propertytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\propertytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\municipalite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\municipalite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\district.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\district.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|d:\\keykeeper-backend\\keykeeper-backend.domain\\entities\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AFDC193-6D61-42D2-A9ED-2495B1C93E65}|keykeeper-backend.domain\\keykeeper-backend.domain.csproj|solutionrelative:keykeeper-backend.domain\\entities\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\keykeeper-backend\\keykeeper-backend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:keykeeper-backend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SaleListing.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\SaleListing.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\SaleListing.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\SaleListing.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\SaleListing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:35.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\Role.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Role.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:32.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Region.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Region.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\Region.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Region.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\Region.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:28.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PropertyType.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\PropertyType.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\PropertyType.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\PropertyType.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\PropertyType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:24.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Municipalite.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Municipalite.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\Municipalite.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Municipalite.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\Municipalite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:20.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "District.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\District.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\District.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\District.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\District.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:15.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Address.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Address.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend.domain\\Entities\\Address.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend.domain\\Entities\\Address.cs",
+              "RelativeToolTip": "keykeeper-backend.domain\\Entities\\Address.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:08:11.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\keykeeper-backend\\Program.cs",
+              "RelativeDocumentMoniker": "keykeeper-backend\\Program.cs",
+              "ToolTip": "D:\\keykeeper-backend\\keykeeper-backend\\Program.cs",
+              "RelativeToolTip": "keykeeper-backend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T19:07:59.65Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

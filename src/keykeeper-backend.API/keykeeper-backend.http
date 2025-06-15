@@ -1,0 +1,6 @@
+@keykeeper_backend_HostAddress = http://localhost:5059
+
+GET {{keykeeper_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
