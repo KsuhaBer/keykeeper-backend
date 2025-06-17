@@ -8,7 +8,7 @@
 
         public string Email { get; private set; }
         public DateTime RegistrationDate { get; private set; }
-        public string PhoneNumber { get; private set; }
+        public string? PhoneNumber { get; private set; }
         public string PasswordHash { get; private set; }
 
         public int RoleId { get; private set; }
@@ -25,18 +25,22 @@
 
         private User() { }
 
-        public User(string firstName, string lastName, string email, string phoneNumber, string passwordHash, int roleId)
+        public User(string firstName, string lastName, string email, string passwordHash, int roleId)
         {
             if (string.IsNullOrWhiteSpace(email)) throw new ArgumentException("Email обязателен");
             FirstName = firstName;
             LastName = lastName;
             Email = email;
-            PhoneNumber = phoneNumber;
             PasswordHash = passwordHash;
             RegistrationDate = DateTime.UtcNow;
             RoleId = roleId;
             LastLoginDate = RegistrationDate;
             IsDeleted = false;
+        }
+
+        public void SetPhoneNumber(string phoneNumber)
+        {
+            PhoneNumber = phoneNumber;
         }
 
         public void UpdateLastLogin() => LastLoginDate = DateTime.UtcNow;
@@ -45,6 +49,20 @@
         {
             if (IsDeleted) throw new InvalidOperationException("Уже удалён");
             IsDeleted = true;
+        }
+
+        public void UpdateName(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+        public void UpdateEmail(string email)
+        {
+            Email = email;
+        }
+        public void UpdatePhoneNumber(string? phoneNumber)
+        {
+            PhoneNumber = phoneNumber;
         }
     }
 

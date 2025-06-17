@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\keykeeper-backend\\src\\keykeeper-backend.Domain\\keykeeper-backend.domain.csproj",
-      "projectName": "keykeeper-backend.domain",
-      "projectPath": "D:\\keykeeper-backend\\src\\keykeeper-backend.Domain\\keykeeper-backend.domain.csproj",
+      "projectUniqueName": "D:\\keykeeper-backend\\src\\keykeeper-backend.Domain\\keykeeper-backend.Domain.csproj",
+      "projectName": "keykeeper-backend.Domain",
+      "projectPath": "D:\\keykeeper-backend\\src\\keykeeper-backend.Domain\\keykeeper-backend.Domain.csproj",
       "packagesPath": "C:\\Users\\barda\\.nuget\\packages\\",
       "outputPath": "D:\\keykeeper-backend\\src\\keykeeper-backend.Domain\\obj\\",
       "projectStyle": "PackageReference",

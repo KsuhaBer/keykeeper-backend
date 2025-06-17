@@ -27,7 +27,7 @@
 
         private SaleListing() { }
 
-        public SaleListing(int userId, int propertyTypeId, int addressId, int price, string description)
+        public SaleListing(int userId, int propertyTypeId, int addressId, int price, string description, int? floor, double? area, int? roomCount, int? totalFloors)
         {
             if (price <= 0) throw new ArgumentException("Цена должна быть положительной");
             if (string.IsNullOrWhiteSpace(description)) throw new ArgumentException("Описание обязательно");
@@ -38,6 +38,12 @@
             Price = price;
             Description = description;
             ListingDate = DateTime.UtcNow;
+            IsActive = false;
+        }
+
+        public void Active()
+        {
+            if (IsActive) throw new InvalidOperationException("Уже активно");
             IsActive = true;
         }
 
@@ -51,6 +57,11 @@
         {
             if (newPrice <= 0) throw new ArgumentException("Цена должна быть положительной");
             Price = newPrice;
+        }
+
+        public void UpdateDescription(string description)
+        {
+            Description = description;
         }
 
         public void AddToFavorites(User user)

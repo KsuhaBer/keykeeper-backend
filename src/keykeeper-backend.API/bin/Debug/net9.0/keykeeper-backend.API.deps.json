@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "keykeeper-backend.API/1.0.0": {
+        "runtime": {
+          "keykeeper-backend.API.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "keykeeper-backend.API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

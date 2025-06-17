@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keykeeper-backend.API", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keykeeper-backend.Domain", "src\keykeeper-backend.Domain\keykeeper-backend.Domain.csproj", "{9C601346-E5F0-CEC2-EC72-2FBAD9EF43A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keykeeper-backend.Application", "src\keykeeper-backend.Application\keykeeper-backend.Application.csproj", "{42B16D61-E44D-D01A-701E-235D4C3EFA92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9C601346-E5F0-CEC2-EC72-2FBAD9EF43A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C601346-E5F0-CEC2-EC72-2FBAD9EF43A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C601346-E5F0-CEC2-EC72-2FBAD9EF43A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B16D61-E44D-D01A-701E-235D4C3EFA92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B16D61-E44D-D01A-701E-235D4C3EFA92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B16D61-E44D-D01A-701E-235D4C3EFA92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B16D61-E44D-D01A-701E-235D4C3EFA92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
