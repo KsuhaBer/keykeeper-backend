@@ -8,8 +8,7 @@ namespace keykeeper_backend.Application.Interfaces
 
         Task<User?> GetByIdAsync(int userId, CancellationToken ct);
 
-        Task<User> GetBySaleListing(int saleListingId,  CancellationToken ct);
-        Task<SaleListing> GetFavoritesListings(int userId, CancellationToken ct);
+        Task<List<SaleListing>> GetFavoritesListings(int userId, CancellationToken ct);
 
         Task<User?> GetByEmailAsync(string email, CancellationToken ct);
 

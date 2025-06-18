@@ -27,10 +27,10 @@ namespace keykeeper_backend.Application.UseCases.Queries
             var result = new PagedResponse<SaleListingDTO>(
                 items.Select(x => new SaleListingDTO
                 {
-                    SaleListingID = x.SaleListingId,
-                    UserID = x.UserId,
-                    PropertyTypeID = x.PropertyTypeId,
-                    AddressID = x.AddressId,
+                    SaleListingId = x.SaleListingId,
+                    UserId = x.UserId,
+                    PropertyTypeId = x.PropertyTypeId,
+                    AddressId = x.AddressId,
                     Description = x.Description,
                     Price = x.Price,
                     ListingDate = x.ListingDate,

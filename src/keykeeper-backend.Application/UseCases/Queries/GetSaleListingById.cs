@@ -32,10 +32,10 @@ namespace keykeeper_backend.Application.UseCases.Queries
 
             return new SaleListingDTO
             {
-                SaleListingID = SaleListingDTO.SaleListingId,
-                UserID = SaleListingDTO.UserId,
-                PropertyTypeID = SaleListingDTO.PropertyTypeId,
-                AddressID = SaleListingDTO.AddressId,
+                SaleListingId = SaleListingDTO.SaleListingId,
+                UserId = SaleListingDTO.UserId,
+                PropertyTypeId = SaleListingDTO.PropertyTypeId,
+                AddressId = SaleListingDTO.AddressId,
                 Floor = SaleListingDTO.Floor,
                 Area = SaleListingDTO.Area,
                 RoomCount = SaleListingDTO.RoomCount,

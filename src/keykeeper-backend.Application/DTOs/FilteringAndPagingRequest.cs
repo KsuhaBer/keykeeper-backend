@@ -21,7 +21,7 @@ namespace keykeeper_backend.Application.DTOs
         public int? MinPrice { get; init; }
         public int? MaxPrice { get; init; }
 
-        public int[]? RoomCount { get; init; }
+        public List<int>? RoomCounts { get; init; }
         public int? RegionId{ get; init; }
         public int? MunicipaliteId { get; init; }
         public int? PropertyTypeId { get; init; }

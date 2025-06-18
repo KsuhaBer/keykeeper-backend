@@ -41,10 +41,10 @@ namespace keykeeper_backend.Application.UseCases.Queries
                 LastLoginDate = user.LastLoginDate,
                 FavoriteListings = user.Favorites
                     .Select(f => new SaleListingDTO {
-                        SaleListingID = f.SaleListing.SaleListingId,
-                        UserID = f.SaleListing.UserId,
-                        AddressID = f.SaleListing.AddressId,
-                        PropertyTypeID = f.SaleListing.PropertyTypeId,
+                        SaleListingId = f.SaleListing.SaleListingId,
+                        UserId = f.SaleListing.UserId,
+                        AddressId = f.SaleListing.AddressId,
+                        PropertyTypeId = f.SaleListing.PropertyTypeId,
                         Description = f.SaleListing.Description,
                         Price = f.SaleListing.Price,
                         ListingDate = f.SaleListing.ListingDate,

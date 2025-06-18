@@ -8,10 +8,10 @@ namespace keykeeper_backend.Application.DTOs
 {
     public class SaleListingDTO
     {
-        public int SaleListingID { get; init; }
-        public int UserID {  get; init; }
-        public int PropertyTypeID { get; init; }
-        public int AddressID {  get; init; }
+        public int SaleListingId { get; init; }
+        public int UserId {  get; init; }
+        public int PropertyTypeId { get; init; }
+        public int AddressId {  get; init; }
         public int? Floor {  get; init; }
         public double? Area { get; init; }
         public int? RoomCount { get; init; }

@@ -14,8 +14,8 @@ namespace keykeeper_backend.Application.Interfaces
         Task<IReadOnlyCollection<SaleListing>> GetSaleListingsByUserAsync(int userId, CancellationToken ct);
 
         Task UpdateAsync(SaleListing saleListing, CancellationToken ct);
-        Task<(IReadOnlyList<SaleListing> Items, int TotalCount)> FilterWithPagingAsync(ListingFilterRequest filter, CancellationToken ct);
+        Task<(IReadOnlyList<SaleListingDTO> Items, int TotalCount)> FilterWithPagingAsync(ListingFilterRequest filter, CancellationToken ct);
 
-        Task<SaleListing> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct);
+        Task<SaleListing?> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct);
     }
 }
