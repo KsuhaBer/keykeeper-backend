@@ -44,5 +44,10 @@ namespace keykeeper_backend.Infrastructure.Repositories
 
             _db.Users.Update(user);
         }
+
+        public async Task AddFavoriteListAsync(int userId, int saleListingId, CancellationToken ct)
+        {
+            await _db.UserFavorites.AddAsync(new UserFavorite(userId, saleListingId));
+        }
     }
 }

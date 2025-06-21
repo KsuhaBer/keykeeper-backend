@@ -1,4 +1,5 @@
 ﻿using keykeeper_backend.Application.DTOs;
+using keykeeper_backend.Application.DTOs.Requests;
 using keykeeper_backend.Application.Interfaces;
 using keykeeper_backend.Domain.Entities;
 using keykeeper_backend.Infrastructure.Extensions;
@@ -33,20 +34,21 @@ namespace keykeeper_backend.Infrastructure.Repositories
             _db.SaleListings.Update(saleListing);
         }
 
-        public async Task<(IReadOnlyList<SaleListingDTO> Items, int TotalCount)> FilterWithPagingAsync(
-            ListingFilterRequest filter,
-            CancellationToken ct)
+        public async Task<(IReadOnlyList<SaleListingDTO> Items, int TotalCount)> FilterWithPagingAsync(ListingFilterRequest filter, CancellationToken ct)
         {
             var query = _db.SaleListings
+                .AsNoTracking()
                 .Include(x => x.Address)
                     .ThenInclude(a => a.Settlement)
                     .ThenInclude(s => s.Municipalite)
-                .AsQueryable()
                 .ApplyFilters(filter)
                 .ApplySorting(filter);
 
+            var sql = query.ToQueryString();
 
-            int totalCount = await query.CountAsync(ct);
+            Console.WriteLine(sql);
+
+            var totalCount = await query.CountAsync(ct);
 
             var items = await query
                 .Skip((filter.Page - 1) * filter.PageSize)
@@ -66,11 +68,11 @@ namespace keykeeper_backend.Infrastructure.Repositories
                     TotalFloors = x.TotalFloors,
                     IsActive = x.IsActive
                 })
-                .AsNoTracking()
                 .ToListAsync(ct);
 
             return (items, totalCount);
         }
+
 
         public async Task<SaleListing?> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct)
         {

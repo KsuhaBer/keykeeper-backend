@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using NetTopologySuite.Geometries;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using keykeeper_backend.Infrastructure.KeykepperDbContext;
 
@@ -20,6 +21,7 @@ namespace keykeeper_backend.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "9.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "postgis");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("keykeeper_backend.Domain.Entities.Address", b =>
@@ -37,11 +39,9 @@ namespace keykeeper_backend.Infrastructure.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("double precision");
+                    b.Property<Point>("Location")
+                        .IsRequired()
+                        .HasColumnType("geometry");
 
                     b.Property<int>("SettlementId")
                         .HasColumnType("integer");
@@ -53,11 +53,13 @@ namespace keykeeper_backend.Infrastructure.Migrations
 
                     b.HasIndex("DistrictId");
 
-                    b.HasIndex("StreetId");
+                    b.HasIndex("Location");
 
-                    b.HasIndex("SettlementId", "StreetId", "HouseNumber")
-                        .IsUnique()
-                        .HasFilter("[StreetId] IS NOT NULL AND [HouseNumber] IS NOT NULL");
+                    NpgsqlIndexBuilderExtensions.HasMethod(b.HasIndex("Location"), "GIST");
+
+                    b.HasIndex("SettlementId");
+
+                    b.HasIndex("StreetId");
 
                     b.ToTable("Addresses");
                 });

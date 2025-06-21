@@ -1,4 +1,5 @@
 ﻿using keykeeper_backend.Application.DTOs;
+using keykeeper_backend.Application.DTOs.Requests;
 using keykeeper_backend.Application.Interfaces;
 using MediatR;
 
@@ -8,6 +9,8 @@ namespace keykeeper_backend.Application.UseCases.Queries
     {
         public ListingFilterRequest Filter { get; init; } = default!;
     }
+
+
 
     public class GetSaleListingsHandler : IRequestHandler<GetSaleListingsQuery, PagedResponse<SaleListingDTO>>
     {

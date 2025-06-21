@@ -13,5 +13,7 @@ namespace keykeeper_backend.Application.Interfaces
         Task<User?> GetByEmailAsync(string email, CancellationToken ct);
 
         Task UpdateAsync(User user, CancellationToken ct);
+
+        Task AddFavoriteListAsync(int userId, int saleListingId, CancellationToken ct);
     }
 }

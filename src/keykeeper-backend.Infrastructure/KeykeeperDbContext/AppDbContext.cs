@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore;
 using keykeeper_backend.Domain.Entities;
 
 namespace keykeeper_backend.Infrastructure.KeykepperDbContext
@@ -47,9 +48,8 @@ namespace keykeeper_backend.Infrastructure.KeykepperDbContext
                 entity.Property(a => a.HouseNumber)
                     .HasMaxLength(20);
 
-                entity.HasIndex(a => new { a.SettlementId, a.StreetId, a.HouseNumber })
-                    .IsUnique()
-                    .HasFilter("[StreetId] IS NOT NULL AND [HouseNumber] IS NOT NULL");
+                entity.HasIndex(a => a.Location)
+                    .HasMethod("GIST");
             });
 
             modelBuilder.Entity<District>().HasKey(d => d.DistrictId);

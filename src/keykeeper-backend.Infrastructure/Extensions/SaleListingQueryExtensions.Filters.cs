@@ -1,4 +1,4 @@
-﻿using keykeeper_backend.Application.DTOs;
+﻿using keykeeper_backend.Application.DTOs.Requests;
 using keykeeper_backend.Domain.Entities;
 
 namespace keykeeper_backend.Infrastructure.Extensions

@@ -1,4 +1,6 @@
-﻿namespace keykeeper_backend.Domain.Entities
+﻿using NetTopologySuite.Geometries;
+
+namespace keykeeper_backend.Domain.Entities
 {
     public class Address
     {
@@ -10,27 +12,30 @@
         public int SettlementId { get; private set; }
         public Settlement Settlement { get; private set; }
         public string? HouseNumber { get; private set; }
-        public double Latitude { get; private set; }
-        public double Longitude { get; private set; }
+        public Point Location { get; private set; }
 
         private readonly List<SaleListing> _saleListings = new();
         public IReadOnlyCollection<SaleListing> SaleListings => _saleListings;
 
         private Address() { }
 
-        public Address(int settlementId, double latitude, double longitude)
+        public Address(int settlementId, Point location)
         {
             SettlementId = settlementId;
-            Latitude = latitude;
-            Longitude = longitude;
+            Location = location;
         }
 
-        public void SetHouseNumber(string house)
+        public void SetHouseNumber(string? house)
         {
-            if (string.IsNullOrWhiteSpace(house))
-                throw new ArgumentException("Номер дома не может быть пустым");
             HouseNumber = house;
         }
+        public void SetDistrictId(int? districtId)
+        {
+            DistrictId = districtId;
+        }
+        public void SetStreetId(int? streetId)
+        {
+            StreetId = streetId;
+        }
     }
-
 }

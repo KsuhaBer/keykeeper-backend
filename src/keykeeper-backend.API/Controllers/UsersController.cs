@@ -1,7 +1,8 @@
-﻿using keykeeper_backend.Application.DTOs;
+﻿using keykeeper_backend.Application.DTOs.Requests;
 using keykeeper_backend.Application.UseCases.Commands;
 using keykeeper_backend.Application.UseCases.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
@@ -31,7 +32,25 @@ namespace keykeeper_backend.Controllers
         {
             var command = new RegisterUserCommand() { Data = request };
             var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginUserRequest request, CancellationToken ct)
+        {
+            var command = new LoginUserCommand() { data = request };
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [Authorize]
+        [HttpPatch("add-favorite-sale-listing")]
+        public async Task<IActionResult> AddFavoriteSaleListing(AddFavoriteListRequest request, CancellationToken ct)
+        {
+            var command = new AddFavoriteListCommand() { data = request };
+            await _mediator.Send(command);
             return Ok();
         }
+
     }
 }
