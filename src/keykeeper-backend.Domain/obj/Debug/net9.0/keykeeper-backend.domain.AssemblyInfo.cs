@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("keykeeper-backend.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6b1962d931b31f61558d4b531b1aaa1179fc955")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca79cefaadca3fbc87ba4413fbdcf3893baa33ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("keykeeper-backend.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("keykeeper-backend.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,7 +6,7 @@
         public string PropertyTypeName { get; private set; }
 
         private readonly List<SaleListing> _saleListings = new();
-        public IReadOnlyCollection<SaleListing> SaleListings => _saleListings;
+        public ICollection<SaleListing> SaleListings => _saleListings;
 
         private PropertyType() { }
 

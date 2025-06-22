@@ -18,5 +18,6 @@ namespace keykeeper_backend.Application.Interfaces
         Task<(IReadOnlyList<SaleListingDTO> Items, int TotalCount)> FilterWithPagingAsync(ListingFilterRequest filter, CancellationToken ct);
 
         Task<SaleListing?> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct);
+        Task<List<PhotoDTO>> GetPhotosByIdSaleListing(int saleListing, CancellationToken ct);
     }
 }

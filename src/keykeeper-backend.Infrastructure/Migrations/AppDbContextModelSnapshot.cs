@@ -179,6 +179,9 @@ namespace keykeeper_backend.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime>("ListingDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -313,6 +316,28 @@ namespace keykeeper_backend.Infrastructure.Migrations
                     b.ToTable("UserFavorites");
                 });
 
+            modelBuilder.Entity("keykeeper_backend.domain.Entities.ListingPhoto", b =>
+                {
+                    b.Property<int>("ListingPhotoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ListingPhotoId"));
+
+                    b.Property<string>("RelativePath")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("SaleListingId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ListingPhotoId");
+
+                    b.HasIndex("SaleListingId");
+
+                    b.ToTable("ListingsPhotos");
+                });
+
             modelBuilder.Entity("keykeeper_backend.Domain.Entities.Address", b =>
                 {
                     b.HasOne("keykeeper_backend.Domain.Entities.District", "District")
@@ -417,6 +442,17 @@ namespace keykeeper_backend.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("keykeeper_backend.domain.Entities.ListingPhoto", b =>
+                {
+                    b.HasOne("keykeeper_backend.Domain.Entities.SaleListing", "SaleListing")
+                        .WithMany("ListingPhotos")
+                        .HasForeignKey("SaleListingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SaleListing");
+                });
+
             modelBuilder.Entity("keykeeper_backend.Domain.Entities.Address", b =>
                 {
                     b.Navigation("SaleListings");
@@ -450,6 +486,8 @@ namespace keykeeper_backend.Infrastructure.Migrations
             modelBuilder.Entity("keykeeper_backend.Domain.Entities.SaleListing", b =>
                 {
                     b.Navigation("Favorites");
+
+                    b.Navigation("ListingPhotos");
                 });
 
             modelBuilder.Entity("keykeeper_backend.Domain.Entities.Settlement", b =>

@@ -1,4 +1,6 @@
-﻿namespace keykeeper_backend.Domain.Entities
+﻿using keykeeper_backend.domain.Entities;
+
+namespace keykeeper_backend.Domain.Entities
 {
     public class SaleListing
     {
@@ -19,11 +21,15 @@
         public int Price { get; private set; }
         public string Description { get; private set; }
         public DateTime ListingDate { get; private set; }
+        public DateTime LastUpdateDate { get; private set; }
         public int? TotalFloors { get; private set; }
-        public bool IsActive { get; private set; }
+        public bool IsActive { get; private set; } = true;
 
         private readonly List<UserFavorite> _favorites = new();
-        public IReadOnlyCollection<UserFavorite> Favorites => _favorites.AsReadOnly();
+        public ICollection<UserFavorite> Favorites => _favorites;
+
+        private readonly List<ListingPhoto> _photos = new();
+        public ICollection<ListingPhoto> ListingPhotos => _photos;
 
         private SaleListing() { }
 
@@ -38,7 +44,7 @@
             Price = price;
             Description = description;
             ListingDate = DateTime.UtcNow;
-            IsActive = false;
+            LastUpdateDate = DateTime.UtcNow;
         }
 
         public void Active()
@@ -57,11 +63,13 @@
         {
             if (newPrice <= 0) throw new ArgumentException("Цена должна быть положительной");
             Price = newPrice;
+            LastUpdateDate = DateTime.UtcNow;
         }
 
         public void UpdateDescription(string description)
         {
             Description = description;
+            LastUpdateDate = DateTime.UtcNow;
         }
 
         public void AddToFavorites(User user)

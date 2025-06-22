@@ -6,7 +6,7 @@
         public string RegionName { get; private set; }
 
         private readonly List<Municipalite> _municipalites = new();
-        public IReadOnlyCollection<Municipalite> Municipalites => _municipalites;
+        public ICollection<Municipalite> Municipalites => _municipalites;
 
         private Region() { }
 

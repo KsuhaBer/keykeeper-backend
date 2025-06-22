@@ -8,7 +8,7 @@
         public Region Region { get; private set; }
 
         private readonly List<Settlement> _settlements = new();
-        public IReadOnlyCollection<Settlement> Settlements => _settlements;
+        public ICollection<Settlement> Settlements => _settlements;
 
         private Municipalite() { }
 

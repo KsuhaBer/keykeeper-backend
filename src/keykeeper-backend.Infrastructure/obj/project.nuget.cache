@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mUb8LOEA72A=",
+  "dgSpecHash": "c3L2505Prmw=",
   "success": true,
   "projectFilePath": "D:\\keykeeper-backend\\src\\keykeeper-backend.Infrastructure\\keykeeper-backend.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barda\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\mediatr\\12.5.0\\mediatr.12.5.0.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\barda\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.6\\microsoft.entityframeworkcore.9.0.6.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.6\\microsoft.entityframeworkcore.abstractions.9.0.6.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.6\\microsoft.entityframeworkcore.analyzers.9.0.6.nupkg.sha512",
@@ -31,6 +32,7 @@
     "C:\\Users\\barda\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.12.1\\system.identitymodel.tokens.jwt.8.12.1.nupkg.sha512",
+    "C:\\Users\\barda\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\barda\\.nuget\\packages\\system.reflection.metadata\\8.0.0\\system.reflection.metadata.8.0.0.nupkg.sha512"
   ],
   "logs": []

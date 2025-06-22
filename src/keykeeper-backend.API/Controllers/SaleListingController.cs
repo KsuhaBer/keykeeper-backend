@@ -19,7 +19,7 @@ namespace keykeeper_backend.Controllers
         }
 
         [Authorize]
-        [HttpPost("create-sale-listing")]
+        [HttpPost]
         public async Task<IActionResult> CreateSaleListing(CreateSaleListingRequest request, CancellationToken ct)
         {
             var command = new AddSaleListingCommand() { data = request };
@@ -27,7 +27,7 @@ namespace keykeeper_backend.Controllers
             return Ok();
         }
 
-        [HttpGet("get-with-filter")]
+        [HttpGet]
         public async Task<IActionResult> GetSaleListingWithFilter(
             [FromQuery] ListingFilterRequest filter,
             CancellationToken ct)
@@ -37,5 +37,28 @@ namespace keykeeper_backend.Controllers
             return Ok(result);
         }
 
+        [Authorize]
+        [HttpPost("{id:int}/photos")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> AddPhoto(
+        int id, IFormFile file, CancellationToken ct)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("Файл пуст");
+
+            var photoId = await _mediator.Send(
+                new AddSaleListingPhotoCommand(id, file), ct);
+
+            return CreatedAtAction(nameof(GetPhotos), new { id, photoId }, photoId);
+        }
+        
+
+        [HttpGet("{id:int}/photos")]
+        public async Task<IActionResult> GetPhotos(int id, CancellationToken ct)
+        {
+            var photos = await _mediator.Send(
+                new GetSaleListingPhotosQuery(id), ct);
+            return Ok(photos);
+        }
     }
 }

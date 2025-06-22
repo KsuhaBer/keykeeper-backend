@@ -299,3 +299,4 @@ D:\keykeeper-backend\src\keykeeper-backend.API\bin\Debug\net9.0\NetTopologySuite
 D:\keykeeper-backend\src\keykeeper-backend.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite.dll
 D:\keykeeper-backend\src\keykeeper-backend.API\bin\Debug\net9.0\Npgsql.NetTopologySuite.dll
 D:\keykeeper-backend\src\keykeeper-backend.API\bin\Debug\net9.0\System.Text.Json.dll
+D:\keykeeper-backend\src\keykeeper-backend.API\bin\Debug\net9.0\keykeeper-backend.API.staticwebassets.runtime.json

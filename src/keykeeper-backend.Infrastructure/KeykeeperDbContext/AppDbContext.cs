@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore;
 using keykeeper_backend.Domain.Entities;
+using keykeeper_backend.domain.Entities;
 
 namespace keykeeper_backend.Infrastructure.KeykepperDbContext
 {
@@ -21,6 +22,7 @@ namespace keykeeper_backend.Infrastructure.KeykepperDbContext
         public DbSet<Street> Streets {  get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserFavorite> UserFavorites { get; set; }
+        public DbSet<ListingPhoto> ListingsPhotos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -138,6 +140,16 @@ namespace keykeeper_backend.Infrastructure.KeykepperDbContext
                 entity.HasOne(uf => uf.SaleListing)
                     .WithMany(sl => sl.Favorites)
                     .HasForeignKey(uf => uf.SaleListingId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<ListingPhoto>(entity =>
+            {
+                entity.HasKey(lp => lp.ListingPhotoId);
+
+                entity.HasOne(lp => lp.SaleListing)
+                    .WithMany(u => u.ListingPhotos)
+                    .HasForeignKey(lp => lp.SaleListingId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
         }

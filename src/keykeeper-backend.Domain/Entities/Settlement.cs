@@ -9,7 +9,7 @@
         public Municipalite Municipalite { get; private set; }
 
         private readonly List<Address> _addresses = new();
-        public IReadOnlyCollection<Address> Addresses => _addresses;
+        public ICollection<Address> Addresses => _addresses;
 
         private Settlement() { }
 

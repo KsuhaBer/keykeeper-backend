@@ -44,13 +44,12 @@ namespace keykeeper_backend.Controllers
         }
 
         [Authorize]
-        [HttpPatch("add-favorite-sale-listing")]
+        [HttpPatch]
         public async Task<IActionResult> AddFavoriteSaleListing(AddFavoriteListRequest request, CancellationToken ct)
         {
             var command = new AddFavoriteListCommand() { data = request };
             await _mediator.Send(command);
             return Ok();
         }
-
     }
 }

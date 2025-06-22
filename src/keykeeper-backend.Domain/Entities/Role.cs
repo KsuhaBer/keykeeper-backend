@@ -6,7 +6,7 @@
         public string RoleName { get; private set; }
 
         private readonly List<User> _users = new();
-        public IReadOnlyCollection<User> Users => _users;
+        public ICollection<User> Users => _users;
 
         private Role() { }
 

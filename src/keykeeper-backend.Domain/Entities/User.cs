@@ -18,10 +18,10 @@
         public bool IsDeleted { get; private set; }
 
         private readonly List<SaleListing> _listings = new();
-        public IReadOnlyCollection<SaleListing> Listings => _listings;
+        public ICollection<SaleListing> Listings => _listings;
 
         private readonly List<UserFavorite> _favorites = new();
-        public IReadOnlyCollection<UserFavorite> Favorites => _favorites.AsReadOnly();
+        public ICollection<UserFavorite> Favorites => _favorites.AsReadOnly();
 
         private User() { }
 

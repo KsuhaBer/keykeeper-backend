@@ -2,7 +2,7 @@
   {
     "ContainingType": "keykeeper_backend.Controllers.SaleListingController",
     "Method": "CreateSaleListing",
-    "RelativePath": "api/SaleListing/create-sale-listing",
+    "RelativePath": "api/SaleListing",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "keykeeper_backend.Controllers.SaleListingController",
     "Method": "GetSaleListingWithFilter",
-    "RelativePath": "api/SaleListing/get-with-filter",
+    "RelativePath": "api/SaleListing",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -87,9 +87,30 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "keykeeper_backend.Controllers.UsersController",
-    "Method": "GetById",
-    "RelativePath": "api/Users/{id}",
+    "ContainingType": "keykeeper_backend.Controllers.SaleListingController",
+    "Method": "AddPhoto",
+    "RelativePath": "api/SaleListing/{id}/photos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "keykeeper_backend.Controllers.SaleListingController",
+    "Method": "GetPhotos",
+    "RelativePath": "api/SaleListing/{id}/photos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -105,7 +126,7 @@
   {
     "ContainingType": "keykeeper_backend.Controllers.UsersController",
     "Method": "AddFavoriteSaleListing",
-    "RelativePath": "api/Users/add-favorite-sale-listing",
+    "RelativePath": "api/Users",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -113,6 +134,22 @@
       {
         "Name": "request",
         "Type": "keykeeper_backend.Application.DTOs.Requests.AddFavoriteListRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "keykeeper_backend.Controllers.UsersController",
+    "Method": "GetById",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

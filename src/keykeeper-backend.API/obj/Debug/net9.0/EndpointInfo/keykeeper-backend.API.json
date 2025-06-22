@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/api/SaleListing/create-sale-listing": {
+    "/api/SaleListing": {
       "post": {
         "tags": [
           "SaleListing"
@@ -34,9 +34,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/SaleListing/get-with-filter": {
+      },
       "get": {
         "tags": [
           "SaleListing"
@@ -151,6 +149,70 @@
         }
       }
     },
+    "/api/SaleListing/{id}/photos": {
+      "post": {
+        "tags": [
+          "SaleListing"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "SaleListing"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Users/{id}": {
       "get": {
         "tags": [
@@ -236,7 +298,7 @@
         }
       }
     },
-    "/api/Users/add-favorite-sale-listing": {
+    "/api/Users": {
       "patch": {
         "tags": [
           "Users"

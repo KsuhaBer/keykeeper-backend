@@ -1,6 +1,7 @@
 ﻿using keykeeper_backend.Application.DTOs;
 using keykeeper_backend.Application.DTOs.Requests;
 using keykeeper_backend.Application.Interfaces;
+using keykeeper_backend.domain.Entities;
 using keykeeper_backend.Domain.Entities;
 using keykeeper_backend.Infrastructure.Extensions;
 using keykeeper_backend.Infrastructure.KeykepperDbContext;
@@ -77,6 +78,18 @@ namespace keykeeper_backend.Infrastructure.Repositories
         public async Task<SaleListing?> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct)
         {
             return await _db.SaleListings.FirstOrDefaultAsync(s=> s.SaleListingId == saleListingId, ct);
+        }
+
+        public async Task<List<PhotoDTO>> GetPhotosByIdSaleListing(int saleListing, CancellationToken ct)
+        {
+            return await _db.ListingsPhotos
+                .Where(p => p.SaleListingId == saleListing)
+                .Select(p => new PhotoDTO()
+                {
+                    ListingPhotoId = p.ListingPhotoId,
+                    Url = "/" + p.RelativePath
+                })
+                .ToListAsync(ct);
         }
     }
 }
