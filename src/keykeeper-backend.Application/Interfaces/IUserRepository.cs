@@ -15,5 +15,9 @@ namespace keykeeper_backend.Application.Interfaces
         Task UpdateAsync(User user, CancellationToken ct);
 
         Task AddFavoriteListAsync(int userId, int saleListingId, CancellationToken ct);
+
+        Task RemoveFavoriteListAsync(int userId, int  saleListingId, CancellationToken ct);
+
+        Task DeleteAsync(int userId, CancellationToken ct);
     }
 }

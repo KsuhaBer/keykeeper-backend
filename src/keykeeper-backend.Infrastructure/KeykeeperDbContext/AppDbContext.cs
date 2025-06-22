@@ -50,8 +50,8 @@ namespace keykeeper_backend.Infrastructure.KeykepperDbContext
                 entity.Property(a => a.HouseNumber)
                     .HasMaxLength(20);
 
-                entity.HasIndex(a => a.Location)
-                    .HasMethod("GIST");
+                /*entity.HasIndex(a => a.Location)
+                    .HasMethod("GIST");*/
             });
 
             modelBuilder.Entity<District>().HasKey(d => d.DistrictId);

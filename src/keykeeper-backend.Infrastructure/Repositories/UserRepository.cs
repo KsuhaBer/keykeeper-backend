@@ -49,5 +49,15 @@ namespace keykeeper_backend.Infrastructure.Repositories
         {
             await _db.UserFavorites.AddAsync(new UserFavorite(userId, saleListingId));
         }
+
+        public async Task RemoveFavoriteListAsync(int userId, int saleListingId, CancellationToken ct)
+        {
+            await _db.UserFavorites.Where(uf => uf.UserId == userId && uf.SaleListingId == saleListingId).ExecuteDeleteAsync(ct);
+        }
+
+        public async Task DeleteAsync(int userId, CancellationToken ct)
+        {
+            await _db.Users.Where(u => u.UserId == userId).ExecuteDeleteAsync(ct);
+        }
     }
 }

@@ -19,5 +19,7 @@ namespace keykeeper_backend.Application.Interfaces
 
         Task<SaleListing?> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct);
         Task<List<PhotoDTO>> GetPhotosByIdSaleListing(int saleListing, CancellationToken ct);
+
+        Task <int> DeleteAsync(int id, CancellationToken ct);
     }
 }

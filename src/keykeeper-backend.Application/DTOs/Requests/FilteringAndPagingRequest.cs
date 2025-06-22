@@ -16,19 +16,20 @@ namespace keykeeper_backend.Application.DTOs.Requests
         public int PageSize { get; init; } = 20;
     }
 
-    public class ListingFilterRequest : PagingRequest
+    public sealed class ListingFilterRequest : PagingRequest
     {
-        public int? MinPrice { get; init; }
-        public int? MaxPrice { get; init; }
+        public decimal? MinPrice { get; init; }
+        public decimal? MaxPrice { get; init; }
+        public IReadOnlyCollection<int>? RoomCounts { get; init; }
 
-        public List<int>? RoomCounts { get; init; } = default!;
-        public int? RegionId{ get; init; }
-        public int? MunicipaliteId { get; init; }
-        public int? PropertyTypeId { get; init; }
-        public int? SettlementId { get; init; }
-        public int? DistrictId { get; init; }
+        public string? RegionName { get; init; }
+        public string? MunicipalityName { get; init; }
+        public string? SettlementName { get; init; }
+        public string? DistrictName { get; init; }
+        public string? PropertyTypeName { get; init; }
 
-        public string? SortBy { get; init; }
-        public bool SortDesc { get; init; } = false;
+        public string? SortBy {  get; init; }
+        public bool SortDesc { get; init; }
     }
+
 }

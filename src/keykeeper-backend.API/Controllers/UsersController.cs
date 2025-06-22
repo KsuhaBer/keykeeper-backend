@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System.Security.Claims;
 
 namespace keykeeper_backend.Controllers
 {
@@ -36,7 +37,7 @@ namespace keykeeper_backend.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginUserRequest request, CancellationToken ct)
+        public async Task<IActionResult> Login([FromBody] LoginUserRequest request, CancellationToken ct)
         {
             var command = new LoginUserCommand() { data = request };
             var result = await _mediator.Send(command);
@@ -49,6 +50,26 @@ namespace keykeeper_backend.Controllers
         {
             var command = new AddFavoriteListCommand() { data = request };
             await _mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpDelete("favorite/{listingId}")]
+        public async Task<IActionResult> RemoveFavoriteSaleListing([FromRoute] int listingId, CancellationToken ct)
+        {
+            var userIdString = User.FindFirstValue("sub");
+            int userId = int.Parse(userIdString);
+            var command = new RemoveFavoriteSaleListingCommand(userId, listingId);
+            await _mediator.Send(command, ct);
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id, CancellationToken ct)
+        {
+            var command = new DeleteUserCommand(id);
+            await _mediator.Send(command, ct); 
             return Ok();
         }
     }

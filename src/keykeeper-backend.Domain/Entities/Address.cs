@@ -12,17 +12,17 @@ namespace keykeeper_backend.Domain.Entities
         public int SettlementId { get; private set; }
         public Settlement Settlement { get; private set; }
         public string? HouseNumber { get; private set; }
-        public Point Location { get; private set; }
+        //public Point Location { get; private set; }
 
         private readonly List<SaleListing> _saleListings = new();
         public ICollection<SaleListing> SaleListings => _saleListings;
 
         private Address() { }
 
-        public Address(int settlementId, Point location)
+        public Address(int settlementId/*, Point location*/)
         {
             SettlementId = settlementId;
-            Location = location;
+            //Location = location;
         }
 
         public void SetHouseNumber(string? house)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("keykeeper-backend.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca79cefaadca3fbc87ba4413fbdcf3893baa33ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d48bb76cb1fb13705f1d04d4c5ee10565922b3e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("keykeeper-backend.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("keykeeper-backend.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

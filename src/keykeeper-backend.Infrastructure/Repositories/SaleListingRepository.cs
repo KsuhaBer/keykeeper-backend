@@ -35,19 +35,24 @@ namespace keykeeper_backend.Infrastructure.Repositories
             _db.SaleListings.Update(saleListing);
         }
 
-        public async Task<(IReadOnlyList<SaleListingDTO> Items, int TotalCount)> FilterWithPagingAsync(ListingFilterRequest filter, CancellationToken ct)
+        public async Task<(IReadOnlyList<SaleListingDTO> Items, int TotalCount)>
+    FilterWithPagingAsync(ListingFilterRequest filter, CancellationToken ct)
         {
             var query = _db.SaleListings
                 .AsNoTracking()
-                .Include(x => x.Address)
+
+                .Include(l => l.PropertyType)
+                .Include(l => l.Address)
+                    .ThenInclude(a => a.District)
+                .Include(l => l.Address)
+                    .ThenInclude(a => a.Street)
+                .Include(l => l.Address)
                     .ThenInclude(a => a.Settlement)
-                    .ThenInclude(s => s.Municipalite)
+                        .ThenInclude(s => s.Municipalite)
+                            .ThenInclude(m => m.Region)
+
                 .ApplyFilters(filter)
                 .ApplySorting(filter);
-
-            var sql = query.ToQueryString();
-
-            Console.WriteLine(sql);
 
             var totalCount = await query.CountAsync(ct);
 
@@ -58,8 +63,23 @@ namespace keykeeper_backend.Infrastructure.Repositories
                 {
                     SaleListingId = x.SaleListingId,
                     UserId = x.UserId,
-                    PropertyTypeId = x.PropertyTypeId,
-                    AddressId = x.AddressId,
+                    PropertyTypeName = x.PropertyType.PropertyTypeName,
+
+                    Address = new AddressDTO
+                    {
+                        DistrictName = x.Address.District != null
+                                             ? x.Address.District.DistrictName
+                                             : null,
+                        StreetName = x.Address.Street != null
+                                             ? x.Address.Street.StreetName
+                                             : null,
+                        SettlementName = x.Address.Settlement.SettlementName,
+                        HouseNumber = x.Address.HouseNumber,
+                        MunicipaliteName = x.Address.Settlement.Municipalite.MunicipalityName,
+                        RegionName = x.Address.Settlement
+                                               .Municipalite.Region.RegionName
+                    },
+
                     Floor = x.Floor,
                     Area = x.Area,
                     RoomCount = x.RoomCount,
@@ -73,6 +93,7 @@ namespace keykeeper_backend.Infrastructure.Repositories
 
             return (items, totalCount);
         }
+
 
 
         public async Task<SaleListing?> GetSaleListingsByIdAsync(int saleListingId, CancellationToken ct)
@@ -90,6 +111,11 @@ namespace keykeeper_backend.Infrastructure.Repositories
                     Url = "/" + p.RelativePath
                 })
                 .ToListAsync(ct);
+        }
+
+        public async Task<int> DeleteAsync(int saleListingId, CancellationToken ct)
+        {
+            return await _db.SaleListings.Where(s => s.SaleListingId == saleListingId).ExecuteDeleteAsync(ct);
         }
     }
 }

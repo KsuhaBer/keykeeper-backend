@@ -29,10 +29,10 @@ namespace keykeeper_backend.Infrastructure.Repositories
             return address;
         }
 
-        public async Task<Address> GetAddressByLocationAsync(Point location, CancellationToken ct)
-        {
-            return await _db.Addresses.FirstOrDefaultAsync(a => a.Location == location, ct);
-        }
+        //public async Task<Address> GetAddressByLocationAsync(Point location, CancellationToken ct)
+        //{
+        //    return await _db.Addresses.FirstOrDefaultAsync(a => a.Location == location, ct);
+        //}
 
         public async Task<District> GetDistrictByNameAsync(string name, CancellationToken ct)
         {
@@ -87,6 +87,32 @@ namespace keykeeper_backend.Infrastructure.Repositories
         {
             await _db.Streets.AddAsync(street, ct);
             return street;
+        }
+
+        public async Task<Address?> GetAddressAsync(
+        int settlementId,
+        int? streetId,
+        int? districtId,
+        string? houseNumber,
+        CancellationToken ct)
+        {
+            var query = _db.Addresses
+                           .AsNoTracking()
+                           .Where(a => a.SettlementId == settlementId);
+
+            query = streetId.HasValue
+                ? query.Where(a => a.StreetId == streetId.Value)
+                : query.Where(a => a.StreetId == null);
+
+            query = districtId.HasValue
+                ? query.Where(a => a.DistrictId == districtId.Value)
+                : query.Where(a => a.DistrictId == null);
+
+            query = !string.IsNullOrWhiteSpace(houseNumber)
+                ? query.Where(a => a.HouseNumber == houseNumber)
+                : query.Where(a => a.HouseNumber == null);
+
+            return await query.FirstOrDefaultAsync(ct);
         }
     }
 }

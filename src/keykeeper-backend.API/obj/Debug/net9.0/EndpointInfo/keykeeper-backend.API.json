@@ -44,16 +44,16 @@
             "name": "MinPrice",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "number",
+              "format": "double"
             }
           },
           {
             "name": "MaxPrice",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "number",
+              "format": "double"
             }
           },
           {
@@ -68,43 +68,38 @@
             }
           },
           {
-            "name": "RegionId",
+            "name": "RegionName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "MunicipaliteId",
+            "name": "MunicipalityName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "PropertyTypeId",
+            "name": "SettlementName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "SettlementId",
+            "name": "DistrictName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "DistrictId",
+            "name": "PropertyTypeName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -213,8 +208,52 @@
         }
       }
     },
+    "/api/SaleListing/{id}": {
+      "delete": {
+        "tags": [
+          "SaleListing"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Users/{id}": {
       "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
         "tags": [
           "Users"
         ],
@@ -328,6 +367,29 @@
           }
         }
       }
+    },
+    "/api/Users/favorite/{listingId}": {
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "listingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -353,8 +415,6 @@
       "CreateSaleListingRequest": {
         "required": [
           "description",
-          "latitude",
-          "longitude",
           "municipaliteName",
           "price",
           "propertyTypeId",
@@ -395,14 +455,6 @@
           "houseNumber": {
             "type": "string",
             "nullable": true
-          },
-          "latitude": {
-            "type": "number",
-            "format": "double"
-          },
-          "longitude": {
-            "type": "number",
-            "format": "double"
           },
           "price": {
             "maximum": 2147483647,

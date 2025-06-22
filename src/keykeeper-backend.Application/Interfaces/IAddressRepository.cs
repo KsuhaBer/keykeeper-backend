@@ -13,7 +13,14 @@ namespace keykeeper_backend.Application.Interfaces
         Task<Address> GetAddressByIdAsync(int id, CancellationToken ct);
         Task<Address> AddAddressAsync(Address address, CancellationToken ct);
 
-        Task<Address?> GetAddressByLocationAsync(Point location, CancellationToken ct);
+        Task<Address?> GetAddressAsync(
+        int settlementId,
+        int? streetId,
+        int? districtId,
+        string? houseNumber,
+        CancellationToken ct);
+
+        //Task<Address?> GetAddressByLocationAsync(Point location, CancellationToken ct);
 
         Task<District?> GetDistrictByNameAsync(string name, CancellationToken ct);
         Task<District> AddDistrictAsync(District district, CancellationToken ct);

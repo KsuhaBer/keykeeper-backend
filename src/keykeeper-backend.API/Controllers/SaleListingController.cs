@@ -24,7 +24,7 @@ namespace keykeeper_backend.Controllers
         {
             var command = new AddSaleListingCommand() { data = request };
             var result = await _mediator.Send(command);
-            return Ok();
+            return Ok(result);
         }
 
         [HttpGet]
@@ -59,6 +59,14 @@ namespace keykeeper_backend.Controllers
             var photos = await _mediator.Send(
                 new GetSaleListingPhotosQuery(id), ct);
             return Ok(photos);
+        }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteSaleListing(int id, CancellationToken ct)
+        {
+            int saleListingId = await _mediator.Send(new DeleteSaleListingCommand(id), ct);
+            return Ok(saleListingId);
         }
     }
 }

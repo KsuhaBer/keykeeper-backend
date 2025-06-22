@@ -24,17 +24,17 @@ namespace keykeeper_backend.Application.DTOs.Requests
         [Required]
         public string RegionName { get; init; } = default!;
 
-        public string StreetName { get; init; } = default!;
+        public string? StreetName { get; init; } = default!;
 
-        public string DistrictName { get; init; } = default!;
+        public string? DistrictName { get; init; } = default!;
 
-        public string HouseNumber { get; init; } = default!;
+        public string? HouseNumber { get; init; } = default!;
 
-        [Required]
-        public double Latitude { get; init; }
+        //[Required]
+        //public double Latitude { get; init; }
 
-        [Required]
-        public double Longitude { get; init; }
+        //[Required]
+        //public double Longitude { get; init; }
 
         [Required, Range(1, int.MaxValue)]
         public int Price {  get; init; }

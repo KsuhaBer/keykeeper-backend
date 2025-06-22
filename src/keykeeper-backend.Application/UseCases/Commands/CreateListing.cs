@@ -30,42 +30,91 @@ namespace keykeeper_backend.Application.UseCases.Commands
             _addresses = addresses;
         }
 
-        public async Task<AddSaleListingResponse> Handle(AddSaleListingCommand cmd, CancellationToken ct)
+        public async Task<AddSaleListingResponse> Handle(
+    AddSaleListingCommand cmd, CancellationToken ct)
         {
             var d = cmd.data;
 
-            var region = await _addresses.GetRegionByNameAsync(d.RegionName, ct) ?? await _addresses.AddRegionAsync(new Region(d.RegionName), ct);
-
+            var region = await _addresses.GetRegionByNameAsync(d.RegionName, ct)
+                         ?? await _addresses.AddRegionAsync(
+                                new Region(d.RegionName), ct);
             await _uow.SaveChangesAsync(ct);
 
-            var municipalite = await _addresses.GetMunicipaliteByNameAsync(d.MunicipaliteName, ct) ?? await _addresses.AddMunicipaliteAsync(new Municipalite(d.MunicipaliteName, region.RegionId), ct);
-
+            var municipality = await _addresses
+                .GetMunicipaliteByNameAsync(d.MunicipaliteName, ct)
+                ?? await _addresses.AddMunicipaliteAsync(
+                       new Municipalite(d.MunicipaliteName, region.RegionId), ct);
             await _uow.SaveChangesAsync(ct);
 
-            var settlement = await _addresses.GetSettlementByNameAsync(d.SettlementName, ct) ?? await _addresses.AddSettlementAsync(new Settlement(d.SettlementName, municipalite.MunicipalityId), ct);
-
+            var settlement = await _addresses
+                .GetSettlementByNameAsync(d.SettlementName, ct)
+                ?? await _addresses.AddSettlementAsync(
+                       new Settlement(d.SettlementName, municipality.MunicipalityId), ct);
             await _uow.SaveChangesAsync(ct);
 
-            var street = d.StreetName != null ? await _addresses.GetStreetByNameAsync(d.StreetName, ct) ?? await _addresses.AddStreetAsync(new Street(d.StreetName), ct) : null;
+            Street? street = null;
+            if (!string.IsNullOrWhiteSpace(d.StreetName))
+            {
+                street = await _addresses.GetStreetByNameAsync(d.StreetName, ct)
+                         ?? await _addresses.AddStreetAsync(new Street(d.StreetName), ct);
+                await _uow.SaveChangesAsync(ct);
+            }
 
-            await _uow.SaveChangesAsync(ct);
+            District? district = null;
+            if (!string.IsNullOrWhiteSpace(d.DistrictName))
+            {
+                district = await _addresses.GetDistrictByNameAsync(d.DistrictName, ct)
+                           ?? await _addresses.AddDistrictAsync(new District(d.DistrictName), ct);
+                await _uow.SaveChangesAsync(ct);
+            }
 
-            var district = d.DistrictName != null ? await _addresses.GetDistrictByNameAsync(d.DistrictName, ct) ?? await _addresses.AddDistrictAsync(new District(d.DistrictName), ct) : null;
+            var address = await _addresses.GetAddressAsync(
+                              settlementId: settlement.SettlementId,
+                              streetId: street?.StreetId,
+                              districtId: district?.DistrictId,
+                              houseNumber: d.HouseNumber,
+                              ct);
 
-            await _uow.SaveChangesAsync(ct);
+            if (address is null)
+            {
+                address = new Address(settlement.SettlementId);
 
-            var address = await _addresses.GetAddressByLocationAsync(new Point(d.Longitude, d.Latitude), ct) ?? await _addresses.AddAddressAsync(new Address(settlement.SettlementId, new Point(d.Longitude, d.Latitude)), ct);
-            address.SetHouseNumber(d.HouseNumber);
-            address.SetDistrictId(district.DistrictId);
-            address.SetStreetId(street.StreetId);
+                address.SetHouseNumber(d.HouseNumber);
+                address.SetStreetId(street?.StreetId);
+                address.SetDistrictId(district?.DistrictId);
 
-            await _uow.SaveChangesAsync(ct);
 
-            var saleListing = new SaleListing(d.UserId, d.PropertyTypeId, address.AddressId, d.Price, d.Description, d.Floor, d.Area, d.RoomCount, d.TotalFloors);
+                await _addresses.AddAddressAsync(address, ct);
+                await _uow.SaveChangesAsync(ct);
+            }
+            else
+            {
+                address.SetHouseNumber(d.HouseNumber);
+                address.SetStreetId(street?.StreetId);
+                address.SetDistrictId(district?.DistrictId);
+                await _uow.SaveChangesAsync(ct);
+            }
+
+
+            var saleListing = new SaleListing(
+                d.UserId,
+                d.PropertyTypeId,
+                address.AddressId,
+                d.Price,
+                d.Description,
+                d.Floor,
+                d.Area,
+                d.RoomCount,
+                d.TotalFloors);
+
             await _saleListings.AddAsync(saleListing, ct);
             await _uow.SaveChangesAsync(ct);
 
-            return new AddSaleListingResponse() { ListingId = saleListing.SaleListingId };
+            return new AddSaleListingResponse
+            {
+                ListingId = saleListing.SaleListingId
+            };
         }
+
     }
 }
