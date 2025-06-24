@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/keykeeper-backend.API/Dockerfile
+    ports:
+      - "5000:8000"
+    environment:
+      CONNECTION_STRING: "Host=db;Port=5432;Database=keykeeper;Username=keykeeper_user;Password=1234"
+    depends_on:
+      - db
+
+  db:
+    ports:
+      - "5432:5432"
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: keykeeper_user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: keykeeper
+    volumes:
+      - pgdata:/var/lib/postgresql/db-keykeeper
+
+volumes:
+  pgdata:

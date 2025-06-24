@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("6689598a-2825-406b-9223-317cd256fe2f")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("keykeeper-backend.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d48bb76cb1fb13705f1d04d4c5ee10565922b3e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82b5cd188eaeaa1535c0af3c20ec9ee54f1dccc2")]
 [assembly: System.Reflection.AssemblyProductAttribute("keykeeper-backend.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("keykeeper-backend.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

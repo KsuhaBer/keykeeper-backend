@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\keykeeper-backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42B16D61-E44D-D01A-701E-235D4C3EFA92}|src\\keykeeper-backend.Application\\keykeeper-backend.Application.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.application\\dtos\\requests\\createsalelistingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42B16D61-E44D-D01A-701E-235D4C3EFA92}|src\\keykeeper-backend.Application\\keykeeper-backend.Application.csproj|solutionrelative:src\\keykeeper-backend.application\\dtos\\requests\\createsalelistingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\controllers\\salelistingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\controllers\\salelistingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\keykeeper-backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\keykeeper-backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\keykeeper-backend.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\keykeeper-backend.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42B16D61-E44D-D01A-701E-235D4C3EFA92}|src\\keykeeper-backend.Application\\keykeeper-backend.Application.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.application\\interfaces\\iaddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42B16D61-E44D-D01A-701E-235D4C3EFA92}|src\\keykeeper-backend.Application\\keykeeper-backend.Application.csproj|solutionrelative:src\\keykeeper-backend.application\\interfaces\\iaddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0DA580E1-4486-D0AB-6272-AFEED0816511}|src\\keykeeper-backend.API\\keykeeper-backend.API.csproj|solutionrelative:src\\keykeeper-backend.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA2A3228-0EA8-4692-8D45-AE09D6E5FB7C}|src\\keykeeper-backend.Infrastructure\\keykeeper-backend.Infrastructure.csproj|d:\\keykeeper-backend\\src\\keykeeper-backend.infrastructure\\migrations\\20250624003532_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA2A3228-0EA8-4692-8D45-AE09D6E5FB7C}|src\\keykeeper-backend.Infrastructure\\keykeeper-backend.Infrastructure.csproj|solutionrelative:src\\keykeeper-backend.infrastructure\\migrations\\20250624003532_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,79 +34,78 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateSaleListingRequest.cs",
-              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.Application\\DTOs\\Requests\\CreateSaleListingRequest.cs",
-              "RelativeDocumentMoniker": "src\\keykeeper-backend.Application\\DTOs\\Requests\\CreateSaleListingRequest.cs",
-              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.Application\\DTOs\\Requests\\CreateSaleListingRequest.cs",
-              "RelativeToolTip": "src\\keykeeper-backend.Application\\DTOs\\Requests\\CreateSaleListingRequest.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wB8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "20250624003532_Initial.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.Infrastructure\\Migrations\\20250624003532_Initial.cs",
+              "RelativeDocumentMoniker": "src\\keykeeper-backend.Infrastructure\\Migrations\\20250624003532_Initial.cs",
+              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.Infrastructure\\Migrations\\20250624003532_Initial.cs",
+              "RelativeToolTip": "src\\keykeeper-backend.Infrastructure\\Migrations\\20250624003532_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T20:58:11.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T00:35:33.175Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SaleListingController.cs",
-              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Controllers\\SaleListingController.cs",
-              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\Controllers\\SaleListingController.cs",
-              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Controllers\\SaleListingController.cs",
-              "RelativeToolTip": "src\\keykeeper-backend.API\\Controllers\\SaleListingController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T20:58:02.52Z",
-              "EditorCaption": ""
+              "Title": "keykeeper-backend.http",
+              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\keykeeper-backend.http",
+              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\keykeeper-backend.http",
+              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\keykeeper-backend.http",
+              "RelativeToolTip": "src\\keykeeper-backend.API\\keykeeper-backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-06-24T00:16:29.26Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\Controllers\\UsersController.cs",
-              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "src\\keykeeper-backend.API\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T20:57:55.874Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "76d882bf-86e5-4247-8436-c37d1d9851bd",
-        "Display": 1,
-        "X": -5,
-        "Y": 16,
-        "Width": 1930,
-        "Height": 1021,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "Title": "keykeeper-backend.API",
+              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\keykeeper-backend.API.csproj",
+              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\keykeeper-backend.API.csproj",
+              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\keykeeper-backend.API.csproj",
+              "RelativeToolTip": "src\\keykeeper-backend.API\\keykeeper-backend.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-24T00:16:00.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\appsettings.json",
+              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\appsettings.json",
+              "RelativeToolTip": "src\\keykeeper-backend.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-24T00:15:53.089Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IAddressRepository.cs",
-              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.Application\\Interfaces\\IAddressRepository.cs",
-              "RelativeDocumentMoniker": "src\\keykeeper-backend.Application\\Interfaces\\IAddressRepository.cs",
-              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.Application\\Interfaces\\IAddressRepository.cs",
-              "RelativeToolTip": "src\\keykeeper-backend.Application\\Interfaces\\IAddressRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAnAAAAAAAAAA==",
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Dockerfile",
+              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\Dockerfile",
+              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Dockerfile",
+              "RelativeToolTip": "src\\keykeeper-backend.API\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-23T22:20:07.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\keykeeper-backend.API\\Program.cs",
+              "ToolTip": "D:\\keykeeper-backend\\src\\keykeeper-backend.API\\Program.cs",
+              "RelativeToolTip": "src\\keykeeper-backend.API\\Program.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T20:35:34.8Z",
+              "WhenOpened": "2025-06-23T22:18:24.986Z",
               "EditorCaption": ""
             }
           ]
