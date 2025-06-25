@@ -1,28 +1,46 @@
 version: '3.9'
 
 services:
-  api:
-    build:
-      context: .
-      dockerfile: src/keykeeper-backend.API/Dockerfile
-    ports:
-      - "5000:8000"
-    environment:
-      CONNECTION_STRING: "Host=db;Port=5432;Database=keykeeper;Username=keykeeper_user;Password=1234"
-    depends_on:
-      - db
-
   db:
-    ports:
-      - "5432:5432"
     image: postgres:17
     restart: unless-stopped
     environment:
       POSTGRES_USER: keykeeper_user
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: keykeeper
+    ports:
+      - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/db-keykeeper
+      - pgdata:/var/lib/postgresql/data
+
+  migrator:
+    build:
+      context: .
+      dockerfile: src/keykeeper-backend.API/Dockerfile
+      target: build # <<< Внимание: тут мы используем не финальный образ, а build слой (SDK)
+    environment:
+      CONNECTION_STRING: "Host=db;Port=5432;Database=keykeeper;Username=keykeeper_user;Password=1234"
+    depends_on:
+      - db
+    working_dir: /src/src/keykeeper-backend.API
+    entrypoint: >
+      bash -c "
+      dotnet tool install --global dotnet-ef &&
+      export PATH=$PATH:/root/.dotnet/tools &&
+      dotnet ef database update
+      "
+
+  api:
+    build:
+      context: .
+      dockerfile: src/keykeeper-backend.API/Dockerfile
+    environment:
+      CONNECTION_STRING: "Host=db;Port=5432;Database=keykeeper;Username=keykeeper_user;Password=1234"
+    depends_on:
+      - db
+      - migrator
+    ports:
+      - "5000:5000"
 
 volumes:
   pgdata:

@@ -10,11 +10,12 @@
 
         private PropertyType() { }
 
-        public PropertyType(string propertyTypeName)
+        public PropertyType(int id, string propertyTypeName)
         {
             if (string.IsNullOrWhiteSpace(propertyTypeName))
                 throw new ArgumentException("Тип недвижимости обязателен");
             PropertyTypeName = propertyTypeName;
+            PropertyTypeId = id;
         }
     }
 

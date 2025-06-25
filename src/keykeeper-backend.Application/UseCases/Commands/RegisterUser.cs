@@ -35,7 +35,7 @@ namespace keykeeper_backend.Application.UseCases.Commands
                 throw new ApplicationException("Email занят");
 
             var hash = _hasher.Hash(d.Password);
-            var user = new User(d.FirstName, d.LastName, d.Email, hash, roleId: 2);
+            var user = new User(d.FirstName, d.LastName, d.Email, hash, roleId: 3);
 
             await _users.CreateAsync(user, ct);
             await _uow.SaveChangesAsync(ct);

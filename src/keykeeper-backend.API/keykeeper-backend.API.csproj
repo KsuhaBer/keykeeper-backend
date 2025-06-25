@@ -34,4 +34,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
+    <ItemGroup>
+	    <Content Include="Migrations\**\*.*" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
 </Project>

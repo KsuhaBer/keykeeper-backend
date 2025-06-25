@@ -152,6 +152,21 @@ namespace keykeeper_backend.Infrastructure.KeykepperDbContext
                     .HasForeignKey(lp => lp.SaleListingId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
+
+            // Seed Roles
+            modelBuilder.Entity<Role>().HasData(
+                new Role(1, "Admin"),
+                new Role(2, "Moderator"),
+                new Role(3, "User")
+            );
+
+            // Seed PropertyTypes
+            modelBuilder.Entity<PropertyType>().HasData(
+                new PropertyType(1, "Квартира"),
+                new PropertyType(2, "Дом"),
+                new PropertyType(3, "Участок")
+            );
+
         }
     }
 }

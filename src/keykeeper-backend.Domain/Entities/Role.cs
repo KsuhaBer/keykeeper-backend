@@ -10,11 +10,12 @@
 
         private Role() { }
 
-        public Role(string roleName)
+        public Role(int roleId, string roleName)
         {
             if (string.IsNullOrWhiteSpace(roleName))
                 throw new ArgumentException("Имя роли обязательно");
             RoleName = roleName;
+            RoleId = roleId;
         }
     }
 

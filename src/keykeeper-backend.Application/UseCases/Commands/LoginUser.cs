@@ -38,8 +38,6 @@ namespace keykeeper_backend.Application.UseCases.Commands
 
             user.UpdateLastLogin();
 
-            //await _uow.SaveChangesAsync(ct);
-
             var token = _jwtTokenGenerator.GenerateToken(user);
 
             return new LoginUserResponse
